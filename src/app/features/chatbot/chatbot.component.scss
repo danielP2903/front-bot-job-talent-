@@ -1,0 +1,15 @@
+@import '../../../styles.scss';
+
+.section {
+  height: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  @include element('container'){
+    background-color: $primary-color-500;
+    padding: 30px 12px;
+    h1{
+      color: $color-white;
+    }
+  }
+}
+

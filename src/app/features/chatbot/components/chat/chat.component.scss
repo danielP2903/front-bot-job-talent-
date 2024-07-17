@@ -1,0 +1,45 @@
+@import '../../../../../styles.scss';
+
+.section {
+  padding: 16px;
+  border-radius: 24px 24px 0 0;
+  background-color: $color-white;
+  bottom: 20px;
+  position: relative;
+
+  @include element('img-bot'){
+    width: 150px;
+    height: 150px;
+  }
+
+
+}
+.container-messages {
+  height: 400px;
+  max-height: 450px;
+  overflow-y: auto;
+  @include element('bot'){
+    clear: both;
+    background-color: $primary-color-100;
+    color: var(--surface-700);
+    border-radius: 8px 8px 0 8px;
+    padding: 9px 12px;
+    float: left;
+    @include apply-style-texts(16px, 400, 24px);
+    margin-bottom: 20px;
+
+  }
+
+  @include element('user'){
+    clear: both;
+    background-color: $primary-color-600;
+    color: $color-white;
+    padding: 9px 12px;
+    border-radius: 8px 8px 0 8px;
+    text-align: right;
+    float: right;
+    @include apply-style-texts(16px, 400, 24px);
+    margin-top: 50px;
+
+  }
+}

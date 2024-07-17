@@ -1,0 +1,22 @@
+<div class="card flex justify-content-center">
+  <p-sidebar class="sidebar" showCloseIcon="false" (visibleChange)="hideSidebar($event)" #sidebarRef [(visible)]="isSidebarVisible">
+    <div class="sidebar__header">
+      <img src="../../../../assets/img/bot.png" alt="">
+      <h1>Bot Job Talent</h1>
+    </div>
+    <p-divider />
+
+    <div class="sidebar__item-menu">
+      <span class="pi pi-ticket"></span>
+      <h3>Crear Entrevista</h3>
+    </div>
+    <div class="sidebar__item-menu">
+      <span class="pi pi-book"></span>
+      <h3>Ver Entrevistas</h3>
+    </div>
+    <div class="sidebar__item-menu">
+      <span class="pi pi-wrench"></span>
+      <h3>Analisis de resultados</h3>
+    </div>
+  </p-sidebar>
+  </div>

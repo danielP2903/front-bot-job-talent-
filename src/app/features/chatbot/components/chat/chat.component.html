@@ -1,0 +1,19 @@
+<section class="section">
+  <img class="section__img-bot" src="../../../../../assets/img/bot.png" alt="bot">
+  <div class="container-messages">
+    <div class="container-messages__bot">
+      <span (click)="op.toggle($event)">Hola mi nombre es Bot Job Talent</span>
+      <p-overlayPanel #op>
+        <div>
+          <p>¿Desea guardar la pregunta?</p>
+          <p-button class="form__button" icon="pi pi-check" [rounded]="true"  />
+          <p-button class="form__button" icon="pi pi-times" [rounded]="true"  />
+        </div>
+      </p-overlayPanel>
+    </div>
+    <div class="container-messages__user">
+      <span>Muchas gracias</span>
+    </div>
+  </div>
+  <app-send-messages-chat></app-send-messages-chat>
+</section>

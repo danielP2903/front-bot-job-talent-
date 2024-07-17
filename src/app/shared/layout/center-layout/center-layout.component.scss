@@ -1,0 +1,15 @@
+@import '../../../../styles.scss';
+
+.container-grid {
+  display: grid;
+  margin:  0 2rem;
+  column-gap: 16px;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+#container-layout {
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: span 12;
+}

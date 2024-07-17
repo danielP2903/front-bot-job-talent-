@@ -1,0 +1,30 @@
+@import '../../../../../styles.scss';
+.form {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  &__text-area {
+    width: 100%;
+
+    &:focus {
+      border-color: $primary-color-500;
+      box-shadow: 0 0 0 0.2rem  $primary-color-200;
+    }
+    &:hover {
+      border-color: $primary-color-500;
+    }
+  }
+}
+::ng-deep .p-button {
+  background-color: $primary-color-400 !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+
+  }
+
+}

@@ -1,0 +1,10 @@
+<app-sidebar [isSidebarVisible]="isSidebarVisible()" (hiddenSidebar)="isSidebarVisible.set($event)"></app-sidebar>
+<app-center-layout>
+  <section class="section">
+    <div class="section__container">
+       <h1>Bot Job Talent</h1>
+       <p-button icon="pi pi-ellipsis-h" (onClick)="showSidebar()" severity="success" />
+    </div>
+    <app-chat></app-chat>
+  </section>
+</app-center-layout>

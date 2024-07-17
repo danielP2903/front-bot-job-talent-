@@ -1,0 +1,29 @@
+@import '../../../../styles.scss';
+.sidebar{
+
+  @include element('header'){
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 100px;
+      height: 100px;
+    }
+    h1 {
+      color: $primary-color-400
+    }
+  }
+
+  @include element('item-menu'){
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover {
+      background-color: $primary-color-200;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 10px 10px 10px 10px;
+    }
+  }
+}

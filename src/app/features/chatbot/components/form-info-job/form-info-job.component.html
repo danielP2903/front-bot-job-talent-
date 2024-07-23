@@ -1,0 +1,24 @@
+<form [formGroup]="formInfoJob" (ngSubmit)="emitValue()">
+  <p-floatLabel class="container-textarea">
+    <textarea
+    class="textarea"
+    pInputTextarea
+    id="float-input"
+    autoResize="true"
+    formControlName="description">
+  </textarea>
+  <label for="float-input">Descripción</label>
+  </p-floatLabel>
+
+  <p-floatLabel class="container-textarea">
+    <textarea
+    id="float-input"
+    class="textarea"
+    pInputTextarea
+    autoResize="true"
+    formControlName="requirements">
+  </textarea>
+  <label for="float-input">Requerimientos</label>
+  </p-floatLabel>
+<p-button type="submit" [disabled]="formInfoJob.invalid" label="Generar Entrevista" />
+</form>

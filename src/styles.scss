@@ -4,3 +4,13 @@
 @import './assets/variables.scss';
 @import './assets/mixins.scss';
 @import "primeicons/primeicons.css";
+::-webkit-scrollbar {
+  width: 6px;
+  height: 12px;
+  background:white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $primary-color-200;
+  border-radius: 10px;
+  border: 2px solid #eee;
+}

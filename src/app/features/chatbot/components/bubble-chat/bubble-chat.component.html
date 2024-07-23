@@ -1,0 +1,20 @@
+<div class="container-messages">
+
+@if (role === 'Bot') {
+  <div class="container-messages__bot">
+    <span (click)="op.toggle($event)">{{content}}</span>
+    <p-overlayPanel #op class="overlay">
+      <p>¿Desea guardar la pregunta?</p>
+      <div class="overlay__container">
+        <p-button class="overlay__button-success" icon="pi pi-check" [rounded]="true"  />
+        <p-button class="overlay__button-danger" icon="pi pi-times" [rounded]="true"  />
+      </div>
+    </p-overlayPanel>
+</div>
+}@else if(role === 'User') {
+  <div class="container-messages__user">
+      <span>{{content}}</span>
+  </div>
+}
+</div>
+

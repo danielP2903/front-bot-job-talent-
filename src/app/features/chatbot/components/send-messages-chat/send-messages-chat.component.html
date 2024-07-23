@@ -1,11 +1,11 @@
 
-<form class="form" [formGroup]="formChat">
+<form class="form" [formGroup]="formChat" (ngSubmit)="emitResponse()">
   <textarea
       class="form__text-area"
       pInputTextarea
       rows="3"
       formControlName="message">
   </textarea>
-  <p-button class="form__button" icon="pi pi-arrow-up-right"  />
+  <p-button class="form__button" [disabled]="formChat.invalid" type="submit" icon="pi pi-arrow-up-right"  />
 
 </form>

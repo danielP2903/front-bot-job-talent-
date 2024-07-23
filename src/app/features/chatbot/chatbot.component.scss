@@ -4,6 +4,7 @@
   height: 100%;
   max-width: 650px;
   margin: 0 auto;
+  background-color: $color-white;
   @include element('container'){
     background-color: $primary-color-500;
     padding: 30px 12px;
@@ -11,5 +12,32 @@
       color: $color-white;
     }
   }
+  @include element('img-bot'){
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.container-title {
+  display: flex;
+  align-items: center;
+  color: $primary-color-500;
+  font-weight: 700;
+  padding: 20px;
+  @include for-phone-only {
+    flex-direction: column;
+  }
+}
+#background-layout {
+  width: 100%;
+  background-image: url('../../../assets/img/fondo.png');
+  z-index: -2;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
 }
 

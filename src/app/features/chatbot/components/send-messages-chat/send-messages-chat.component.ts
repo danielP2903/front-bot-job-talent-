@@ -1,7 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TypeChat } from '../../../../core/models/interfaces/messages';
+import { GenerateInterviewService } from '../../../../core/services/interview/generate-interview.service';
 
 @Component({
   selector: 'app-send-messages-chat',
@@ -11,11 +13,11 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
   styleUrl: './send-messages-chat.component.scss'
 })
 export class SendMessagesChatComponent implements OnInit {
-
-
+  @Output() valueChat = new EventEmitter<string>();
   formBuilder = inject(FormBuilder);
-
+  serviceInterview = inject(GenerateInterviewService);
   formChat!:FormGroup;
+  roleChat!:TypeChat;
 
   ngOnInit(): void {
     this.initializeForm();
@@ -23,7 +25,14 @@ export class SendMessagesChatComponent implements OnInit {
 
   initializeForm() {
     this.formChat = this.formBuilder.group({
-      message:['',[Validators.required, Validators.minLength(1)]]
+      message:['',[Validators.required, Validators.minLength(10)]]
     })
   }
+
+  emitResponse() {
+    if(this.formChat.valid){
+      this.valueChat.emit(this.formChat.value.message)
+    }
+  }
+
 }

@@ -1,0 +1,45 @@
+@import '../../../../../styles';
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+  padding: 20px;
+}
+.container-textarea {
+  width: 100%;
+  max-height: 250px;
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+  &:hover {
+    border-color: $primary-color-500;
+  }
+}
+::ng-deep .p-inputtextarea {
+  overflow-y: auto !important;
+  width: 100%;
+  max-height: 250px;
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+  &:hover {
+    border-color: $primary-color-500;
+  }
+}
+
+::ng-deep .p-button {
+  background-color: $primary-color-400 !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+}

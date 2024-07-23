@@ -1,0 +1,34 @@
+@import '../../../../../styles';
+.section {
+  text-align: center;
+
+  @include element('container-buttons') {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    justify-content: center;
+
+    &--success {
+      background-color: $color-success !important;
+    }
+
+    &--danger {
+      background-color: $color-danger !important;
+
+    }
+  }
+}
+::ng-deep .section__container-buttons--success > button {
+  background-color: $color-success !important;
+}
+
+::ng-deep .section__container-buttons--danger > button {
+  background-color: $color-danger !important;
+
+}
+.container-rating{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}

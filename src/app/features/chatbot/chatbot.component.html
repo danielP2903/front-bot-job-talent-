@@ -1,10 +1,24 @@
-<app-sidebar [isSidebarVisible]="isSidebarVisible()" (hiddenSidebar)="isSidebarVisible.set($event)"></app-sidebar>
 <app-center-layout>
   <section class="section">
     <div class="section__container">
        <h1>Bot Job Talent</h1>
-       <p-button icon="pi pi-ellipsis-h" (onClick)="showSidebar()" severity="success" />
     </div>
-    <app-chat></app-chat>
+    <div class="container-title">
+      <img class="section__img-bot" src="../../../../../assets/img/bot.png" alt="bot">
+
+      <span>{{flowText()}}</span>
+    </div>
+@if (flow() === 1) {
+  <app-menu (option)="getOptionSelected($event)"></app-menu>
+}@else if(flow() === 2){
+  <app-form-info-job (promptJob)="captureInfoJob($event)"></app-form-info-job>
+}@else if(flow() ===3) {
+  <app-generator-questions></app-generator-questions>
+}@else if(flow() === 4){
+  <app-chat></app-chat>
+
+}
+
   </section>
 </app-center-layout>
+<div id="background-layout"></div>

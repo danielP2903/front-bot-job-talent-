@@ -1,0 +1,32 @@
+@import '../../../../styles';
+
+.menu {
+  @include element('list') {
+   list-style: none;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ li {
+   width: auto;
+   // background-color: $primary-color-200;
+   cursor: pointer;
+   text-align: center;
+   padding: 20px;
+   border-radius: 10px;
+   color: $color-gray-600;
+   @include apply-style-texts(16px,700,24px);
+
+   &:hover {
+     background-color: $primary-color-200;
+   }
+   span {
+     margin-right: 10px;
+   }
+
+}
+@include element('divider'){
+   width:100%;
+  }
+}

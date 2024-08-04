@@ -1,5 +1,5 @@
 export interface IGenerateQuestionInterview {
-  assistantId:string;
+  assistant:string;
   threadId:string;
   response:string;
 }

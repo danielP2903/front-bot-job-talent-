@@ -1,0 +1,22 @@
+<app-center-layout>
+  <section class="section">
+    <app-header></app-header>
+    @if (loaderService.getLoader() | async) {
+      <div class="section__loader">
+        <app-loader [text]="titleLoader"></app-loader>
+      </div>
+    }@else {
+      <div class="section__info">
+        <h1>Resultados de la entrevista</h1>
+        <span class="section__info--qualification">Calificación Global {{resultInterview.calificacion_global}} puntos</span>
+        <span class="section__info--text">{{resultInterview.feedback}}</span>
+        <span>La entrevista presentada será enviado a la compañia reclutadora para evaluar los resultados, gracias por tu tiempo y presentación.</span>
+      </div>
+      <div class="section__container-button">
+        <p-button class="button" label="Finalizar" (onClick)="redirectLogin()" icon="pi pi-check" iconPos="right" />
+      </div>
+
+    }
+  </section>
+
+</app-center-layout>

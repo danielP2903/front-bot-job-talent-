@@ -27,6 +27,11 @@
     @content;
   }
 }
+@mixin for-ultra-small {
+  @media (max-width: 350px) {
+    @content;
+  }
+}
 
 @mixin element($element) {
   $block: &;

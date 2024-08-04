@@ -1,24 +1,36 @@
 <app-center-layout>
   <section class="section">
-    <div class="section__container">
+    <!-- <div class="section__container">
        <h1>Bot Job Talent</h1>
-    </div>
-    <div class="container-title">
+    </div> -->
+    <!-- <div class="container-title">
       <img class="section__img-bot" src="../../../../../assets/img/bot.png" alt="bot">
 
       <span>{{flowText()}}</span>
-    </div>
+    </div> -->
+    <app-header></app-header>
 @if (flow() === 1) {
   <app-menu (option)="getOptionSelected($event)"></app-menu>
 }@else if(flow() === 2){
   <app-form-info-job (promptJob)="captureInfoJob($event)"></app-form-info-job>
 }@else if(flow() ===3) {
-  <app-generator-questions></app-generator-questions>
+  <app-generator-questions
+    (dataGenerateQuestion)="generateQuestionInterview($event)"
+    [Question]="questionInterview()"
+    (error)="resetFlow()"
+    (questionsSelected)="saveInterview($event)"
+    >
+  </app-generator-questions>
 }@else if(flow() === 4){
   <app-chat></app-chat>
-
+}@else if(flow() === 5) {
+  <app-list-interviews></app-list-interviews>
+}@else if (flow() === 6) {
+  <app-reports-interview></app-reports-interview>
 }
 
   </section>
+
 </app-center-layout>
+<p-toast/>
 <div id="background-layout"></div>

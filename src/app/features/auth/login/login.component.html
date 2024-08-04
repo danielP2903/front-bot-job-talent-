@@ -1,0 +1,28 @@
+<app-center-layout>
+  <section class="section">
+    <app-header></app-header>
+    <form [formGroup]="formLogin" class="section__form">
+      <div class="section__form__container-title">
+        <h1>Bienvenido!</h1>
+        <span>Ingresa tu usuario y contraseña para ingresar como reclutador</span>
+      </div>
+      <p-floatLabel>
+        <input pInputText id="username" formControlName="username" autocomplete="off"/>
+        <label for="username">Usuario</label>
+    </p-floatLabel>
+
+    <p-floatLabel>
+      <p-password formControlName="password" [feedback]="false" autocomplete="off"  />
+      <label for="password">Contraseña</label>
+    </p-floatLabel>
+    <p-button label="Ingresar"  (onClick)="login()" class="w-full form__button" styleClass="w-full" />
+    <a (click)="isModeRegister.set(true)">¿No estas registrado?</a>
+    <a (click)="isModeOtp.set(true)">¿Tienes un código para una entrevista?</a>
+    </form>
+    <div class="section__footer"></div>
+  </section>
+</app-center-layout>
+<div id="background-layout"></div>
+<app-register [showModal]="isModeRegister()" (messageRegister)="showMessageRegister($event)" (closeModal)="isModeRegister.set($event)"></app-register>
+<app-form-otp [showModal]="isModeOtp()" (closeModal)="isModeOtp.set(false)"></app-form-otp>
+<p-toast />

@@ -21,7 +21,7 @@
 .container-title {
   display: flex;
   align-items: center;
-  color: $primary-color-500;
+  color: $color-gray-600;
   font-weight: 700;
   padding: 20px;
   @include for-phone-only {

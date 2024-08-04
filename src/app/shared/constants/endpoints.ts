@@ -1,5 +1,14 @@
 export const Endpoints = {
-  interviews: '/interviews/generator-questions'
+  generatorQuestions: '/interviews/generator-questions',
+  interviews:"/interviews",
+  login:"/auth/login",
+  questions:"/questions",
+  generateCode: '/questions/code',
+  validateCode: '/questions/validateCode',
+  resultInterview:'/interviews/qualifier',
+  reportInterview: '/questions/resultInterviews',
+  dowloadPdf: '/questions/reportInterview',
+  users:'/users'
 }
 
 export const questions_dummy = [

@@ -14,3 +14,15 @@
   border-radius: 10px;
   border: 2px solid #eee;
 }
+#background-layout {
+  width: 100%;
+  background-image: url('../src/assets/img/fondo.png');
+  z-index: -2;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+}

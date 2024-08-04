@@ -1,0 +1,65 @@
+@import '../../../../styles';
+.container {
+  display: flex;
+  margin: 30px 0;
+}
+::ng-deep .container-button > button {
+  background-color: $primary-color-400 !important;
+  max-width: 350px !important;
+  width: 350px !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+::ng-deep .p-inputotp > input {
+  @include for-phone-only {
+    width: 34px !important;
+  }
+}
+::ng-deep .p-dialog-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 30px 0;
+}
+.title {
+  @include apply-style-texts(18px, 500,24px)
+}
+::ng-deep .button-form > button {
+  background-color: $primary-color-400 !important;
+  max-width: 250px !important;
+  width: 250px !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+::ng-deep .button-close > button {
+  background-color: $color-gray-600 !important;
+  max-width: 250px !important;
+  width: 250px !important;
+}
+
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

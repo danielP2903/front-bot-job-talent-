@@ -1,0 +1,8 @@
+<p-dialog [modal]="true" [(visible)]="showModal" [closable]="false" class="ui-dialog">
+  <div class="container">
+    <span class="container__text">Entregale este código al candidato para que realice la entrevista, una vez presentada el código quedará anulado.</span>
+    <span class="container__code">{{code}}</span>
+    <p-button class="container-button" type="submit" (onClick)="closeModal.emit()"  label="Cerrar" />
+  </div>
+
+</p-dialog>

@@ -1,0 +1,57 @@
+@import '../../../../../styles';
+$primary-color: #2c3e50;
+$secondary-color: #ecf0f1;
+
+.question-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $color-white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .title {
+    color: $color-gray-600;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .question-list {
+    list-style: none;
+    padding: 0;
+
+    .question-item {
+      background-color: $primary-color-200;
+      margin: 10px 0;
+      padding: 15px;
+      cursor: pointer;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $primary-color-100;
+      }
+    }
+  }
+}
+::ng-deep .p-button {
+  background-color: $primary-color-400 !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+.container-button {
+  text-align: center;
+}
+::ng-deep .p-messages {
+  max-width: 600px !important;
+  margin: auto;
+}

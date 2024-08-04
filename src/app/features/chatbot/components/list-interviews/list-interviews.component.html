@@ -1,0 +1,40 @@
+<section class="section">
+  @if (step() === 1) {
+    <app-back  (click)="routeService.setRedirect({redirect:true})"></app-back>
+    @for (interview of listInterviews; track $index) {
+      <div class="section__list">
+        <div >
+          <h1>{{interview.titleVacancy}}</h1>
+          <span>{{interview.dateCreation | date}}</span>
+        </div>
+        <div class="section__buttons">
+          <p-button class="section__buttons--color" (onClick)="selectInterview(interview)" pTooltip="Ver Entrevista"  icon="pi pi-eye"  />
+          <p-button class="section__buttons--color" (onClick)="generateCode(interview._id)" pTooltip="Generar código"  icon="pi pi-sync"  />
+          <p-button class="section__buttons--color" (onClick)="viewResults(interview._id)" pTooltip="Resultados"  icon="pi pi-exclamation-circle"  />
+
+        </div>
+      </div>
+    }@empty {
+      <p-messages
+      [(value)]="messages"
+      [enableService]="false"
+      [closable]="false" />
+    }
+  }@else {
+    @defer (when step() == 2) {
+      <app-reports-interview [identifierInterview]="identifierSelected" (backToListInterview)="step.set(1)">
+      </app-reports-interview>
+    }
+  }
+</section>
+<p-toast/>
+@defer (when isViewInterview) {
+  @if (interviewSelected) {
+    <app-modal-questions-selected [showModal]="isViewInterview" [questions]="interviewSelected.questions" [isView]="true" (closeModal)="isViewInterview = false"></app-modal-questions-selected>
+  }
+}
+@defer (when isViewCodeGenerated) {
+  @if (codeGenerated() && codeGenerated() !=='') {
+    <app-modal-code [showModal]="isViewCodeGenerated" (closeModal)="isViewCodeGenerated = false" [code]="codeGenerated()"></app-modal-code>
+  }
+}

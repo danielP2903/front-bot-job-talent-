@@ -1,15 +1,19 @@
 <section class="section">
-  <p-card header="Bot Job Generator" subheader="Pregunta N. {{counterQuestions()}}" >
-    <p>
-      Pregunta 1: ¿Cuál es tu experiencia previa en el desarrollo de aplicaciones web utilizando Angular?
-    </p>
-    <ng-template pTemplate="footer">
-        <div class="section__container-buttons">
-            <p-button label="Generar Nueva Pregunta" (onClick)="updateCounter()" severity="secondary" class="w-full section__container-buttons--danger" styleClass="w-full" />
-            <p-button label="Guardar Pregunta" (onClick)="saveQuestion()" class="w-full section__container-buttons--success" styleClass="w-full" />
-        </div>
-    </ng-template>
-</p-card>
+  @if (loaderService.getLoader() | async) {
+    <app-loader [text]="'Generando pregunta...'"></app-loader>
+  }@else {
+    <p-card header="Bot Job Generator" subheader="Pregunta N. {{counterQuestions()}}" >
+      <p>
+       {{question}}
+      </p>
+      <ng-template pTemplate="footer">
+          <div class="section__container-buttons">
+              <p-button label="Generar Nueva Pregunta" [disabled]="questionsSave.length ===5" (onClick)="generateQuestion()" severity="secondary" class="w-full section__container-buttons--danger" styleClass="w-full" />
+              <p-button label="Guardar Pregunta" [disabled]="questionsSave.length ===5" (onClick)="saveQuestion()" class="w-full section__container-buttons--success" styleClass="w-full" />
+          </div>
+      </ng-template>
+  </p-card>
+  }
 <div class="container-rating">
   <span>Preguntas Guardadas</span>
   <p-rating [(ngModel)]="value" stars="5">
@@ -28,3 +32,10 @@
 </p-rating>
 </div>
 </section>
+<app-modal-questions-selected
+  [showModal]="viewModal"
+  [questions]="questionsSave"
+  (saveInterview)="sendQuestionsInterview()"
+>
+</app-modal-questions-selected>
+<p-toast/>

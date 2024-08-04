@@ -1,1 +1,22 @@
-<p>welcome works!</p>
+<app-center-layout>
+  <div class="container">
+    <p-carousel
+    [value]="options"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="true"
+    [showNavigators]="false"
+    autoplayInterval="5000"
+    >
+    <ng-template let-option pTemplate="item">
+      <div class="container__content">
+        <img [src]="option.img ? option.img : '../../../assets/img/bot.png'" alt="">
+        <h1>{{option.title}}</h1>
+        <span>{{option.content}}</span>
+      </div>
+    </ng-template>
+</p-carousel>
+<p-button label="Empezar" class="w-full button" (onClick)="redirectLogin()" styleClass="w-full" />
+  </div>
+</app-center-layout>
+<div id="background-layout"></div>

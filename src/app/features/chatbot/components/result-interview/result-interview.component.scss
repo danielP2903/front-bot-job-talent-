@@ -1,0 +1,53 @@
+@import '../../../../../styles';
+
+.section {
+  height: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: $color-white;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+  @include element('loader'){
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  @include element('info') {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+    gap: 10px;
+
+    h1 {
+      @include apply-style-texts(2rem,700,30px);
+      color: $color-gray-600;
+      margin-bottom: 10px;
+    }
+
+    &--qualification {
+      display: block;
+      font-size: 1.5rem;
+      color: $color-gray-600;
+
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    &--text {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+  }
+  @include element('container-button'){
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
+::ng-deep .button > button {
+  background-color:  $primary-color-400  !important;
+}

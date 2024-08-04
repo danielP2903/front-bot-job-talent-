@@ -1,0 +1,32 @@
+<div class="card flex justify-content-center">
+  <p-dialog class="dialog" header="Registrarse"  [modal]="true" [closable]="false" [(visible)]="showModal" [style]="{ width: '25rem' }">
+
+    <form [formGroup]="formRegister" class="dialog__form">
+      <span class="p-text-secondary block mb-5">Ingresa los datos correctamente</span>
+      <p-floatLabel class="floatlabel-input">
+        <input pInputText id="input" formControlName="name" autocomplete="off" />
+        <label for="username">Nombres</label>
+      </p-floatLabel>
+      <p-floatLabel  class="floatlabel-input">
+        <input pInputText id="input" formControlName="lastname" autocomplete="off" />
+        <label for="username">Apellidos</label>
+      </p-floatLabel>
+      <p-floatLabel  class="floatlabel-input">
+        <input pInputText id="input" formControlName="company" autocomplete="off" />
+        <label for="username">Empresa</label>
+      </p-floatLabel>
+      <p-floatLabel  class="floatlabel-input">
+        <input pInputText id="input" formControlName="username" autocomplete="off" />
+        <label for="username">Email</label>
+      </p-floatLabel>
+        <p-floatLabel  class="floatlabel-input">
+          <p-password formControlName="password"   id="input" [feedback]="false" autocomplete="off" />
+          <label for="password">Contraseña</label>
+        </p-floatLabel>
+    </form>
+    <div class="dialog__container-buttons">
+      <p-button label="Cancelar" class="container-buttons--close" (onClick)="dismiss()" />
+      <p-button label="Guardar" class="container-buttons--success" [disabled]="formRegister.invalid" (onClick)="registerUser()" />
+    </div>
+  </p-dialog>
+</div>

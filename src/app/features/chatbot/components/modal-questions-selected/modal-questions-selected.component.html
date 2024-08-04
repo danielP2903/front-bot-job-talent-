@@ -1,0 +1,20 @@
+<p-dialog  [modal]="true" [(visible)]="showModal" [closable]="false" [style]="{ width: '45rem' }">
+  <p-messages [(value)]="messages" [closable]="false" [enableService]="false" />
+  <div class="question-list-container">
+    <h2 class="title">Preguntas Seleccionadas</h2>
+    <ul class="question-list">
+      @for (item of questions; track $index) {
+        <li  class="question-item">
+          {{ item }}
+        </li>
+      }
+    </ul>
+    <div class="container-button">
+      @if (isView) {
+        <p-button type="submit" (onClick)="closeModal.emit()" label="Cerrar" />
+      }@else {
+        <p-button type="submit" (onClick)="save()" [disabled]="questions.length < 5" label="Guardar Entrevista" />
+      }
+    </div>
+  </div>
+</p-dialog>

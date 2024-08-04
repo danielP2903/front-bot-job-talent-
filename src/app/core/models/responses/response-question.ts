@@ -1,0 +1,19 @@
+export interface IResponseQuestion {
+  "4":{
+    "id":string;
+    "role":string;
+    "content":[
+      {
+        type:string;
+        text:{
+          value:string;
+        }
+      }
+    ]
+  },
+  "5":{
+    threadId:string;
+    messageId:string;
+  },
+  content:string;
+}

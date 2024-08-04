@@ -1,0 +1,36 @@
+<section class="section">
+  <app-back (click)="backToListInterview.emit()"> </app-back>
+  <span class="section__title">Resultados de las entrevistas.</span>
+  @for (interview of listInterviews; track $index) {
+    <p-accordion >
+      <p-accordionTab>
+        <ng-template pTemplate="header">
+          <div class="section__header">
+            <span>{{interview.presenter.email}}</span>
+            <p-badge [value]="+interview.qualification.replace(',','')" badgeSize="large" [severity]="interview.qualification.replace(',','') | qualification"/>
+          </div>
+        </ng-template>
+
+        <article class="section__container">
+          <div class="section__container__item">
+            <span class="section__container__item--title">Calificación:</span>
+            <span>{{interview.qualification.replace(',','')}} puntos</span>
+          </div>
+          <div class="section__container__item">
+            <span class="section__container__item--title">Comentarios:</span>
+            <span>{{interview.comments.replace(',','')}}</span>
+          </div>
+          <div class="section__container__item">
+            <p-button class="button-report"  pTooltip="Descargar Reporte completo" (onClick)="downloadReport(interview.idInterview)"  icon="pi pi-file-pdf"  />
+          </div>
+        </article>
+
+    </p-accordionTab>
+    </p-accordion>
+  }@empty {
+    <p-messages
+    [(value)]="messages"
+    [enableService]="false"
+    [closable]="false" />
+  }
+</section>

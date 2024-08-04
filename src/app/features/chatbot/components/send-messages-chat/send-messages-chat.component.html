@@ -3,9 +3,10 @@
   <textarea
       class="form__text-area"
       pInputTextarea
+      (keydown.enter)="emitResponse()"
       rows="3"
       formControlName="message">
   </textarea>
-  <p-button class="form__button" [disabled]="formChat.invalid" type="submit" icon="pi pi-arrow-up-right"  />
+  <p-button class="form__button" [disabled]="formChat.invalid || disableChat" type="submit" icon="pi pi-arrow-up-right"  />
 
 </form>

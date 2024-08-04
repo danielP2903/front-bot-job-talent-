@@ -1,0 +1,37 @@
+@import '../../../../../styles';
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  @include element('text'){
+    @include apply-style-texts(20px,700,30px);
+    color: $color-gray-600;
+    text-align: justify
+  }
+  @include element('code'){
+    @include apply-style-texts(24px,700,24px);
+  }
+
+
+}
+::ng-deep .container-button > button {
+  background-color: $primary-color-400 !important;
+  max-width: 350px !important;
+  width: 350px !important;
+
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+::ng-deep .p-dialog {
+  max-width: 600px;
+}

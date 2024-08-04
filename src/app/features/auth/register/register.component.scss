@@ -1,0 +1,47 @@
+@import '../../../../styles';
+
+
+.dialog {
+
+  @include element('form'){
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  @include element('container-buttons'){
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+}
+::ng-deep .container-buttons--success > button {
+  background-color: $primary-color-400 !important;
+}
+::ng-deep .container-buttons--close > button {
+  background-color: $color-gray-600 !important;
+}
+
+
+#input {
+  width: 100% !important;
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+  &:hover {
+    border-color: $primary-color-500;
+  }
+}
+::ng-deep .p-password > input {
+  &:focus {
+    border-color: $primary-color-500;
+    box-shadow: 0 0 0 0.2rem  $primary-color-200;
+  }
+  &:hover {
+    border-color: $primary-color-500;
+  }
+}

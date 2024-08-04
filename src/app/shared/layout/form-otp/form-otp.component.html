@@ -1,0 +1,27 @@
+<p-dialog  [modal]="true" [(visible)]="showModal" [closable]="false"[style]="{ width: '27rem','max-width':'27rem' }" >
+<span class="title">{{textAction}}</span>
+@if (step() === 1) {
+  <form [formGroup]="form">
+    <p-floatLabel>
+      <input pInputText id="email" formControlName="email" autocomplete="off" />
+      <label for="email">Correo</label>
+    </p-floatLabel>
+    <p-floatLabel>
+      <input pInputText id="names" formControlName="names" autocomplete="off" />
+      <label for="names">Nombres</label>
+    </p-floatLabel>
+  </form>
+  <div class="container-buttons">
+    <p-button class="button-form" [disabled]="form.invalid" (onClick)="step.set(2)"  label="Aceptar" />
+    <p-button label="Cancelar" class="button-close" (onClick)="this.closeModal.emit()" />
+  </div>
+
+}@else {
+  <div class="container">
+    <p-inputOtp (keydown.enter)="setCode()" [(ngModel)]="value" [length]="8" [integerOnly]="true"  />
+  </div>
+  <p-button class="container-button" type="submit" [disabled]="value.length < 8" (onClick)="setCode()"  label="Aceptar" />
+}
+
+</p-dialog>
+<p-toast/>

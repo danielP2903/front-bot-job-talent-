@@ -31,4 +31,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
+  box-shadow: 10px 10px 100px $color-gray-400;
+  margin-top: 20px;
+  @include apply-style-texts(18px, 700, 28px);
+  color: $color-gray-600;
 }

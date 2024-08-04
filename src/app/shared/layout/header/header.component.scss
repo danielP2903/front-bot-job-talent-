@@ -1,0 +1,45 @@
+@import '../../../../styles';
+
+.header {
+  background-color: $primary-color-500;
+  padding: 30px 12px;
+  display: flex;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+
+  flex-direction: column;
+  gap: 25px;
+  h1{
+    color: $color-white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    line-height: 1.5;
+    margin: 0 auto;
+  }
+  img {
+    width: 120px;
+    opacity: 0.9;
+    border-radius: 15px;
+    height: 120px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    outline-offset: 5px;
+    outline: 5px solid aliceblue;
+    filter: grayscale(100%);
+    margin: 0 auto 10px auto;
+  }
+
+
+}
+
+::ng-deep .p-splitbutton > button {
+  background-color: #1F2937;
+
+  &:focus {
+    border-color: #1F2937;
+
+  }
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
+}

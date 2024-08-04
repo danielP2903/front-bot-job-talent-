@@ -1,0 +1,26 @@
+@import '../../../../styles';
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+
+  @include element('text'){
+    color: $color-gray-600;
+    @include apply-style-texts(16px, 500, 24px);
+    animation: move 2s infinite;
+
+  }
+}
+::ng-deep .p-progress-spinner-circle {
+  animation: none;
+  stroke: $primary-color-600;
+}
+@keyframes move {
+  0%, 100% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(20px);
+  }
+}

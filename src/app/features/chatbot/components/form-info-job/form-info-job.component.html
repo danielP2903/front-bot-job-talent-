@@ -1,24 +1,34 @@
-<form [formGroup]="formInfoJob" (ngSubmit)="emitValue()">
-  <p-floatLabel class="container-textarea">
-    <textarea
-    class="textarea"
-    pInputTextarea
-    id="float-input"
-    autoResize="true"
-    formControlName="description">
-  </textarea>
-  <label for="float-input">Descripción</label>
+<section>
+  <app-back (click)="routeService.setRedirect({redirect:true})"></app-back>
+  <div class="container">
+    <span class="container__text">Ingresa los datos básicos del empleo.</span>
+  </div>
+  <form [formGroup]="formInfoJob" (ngSubmit)="emitValue()">
+    <p-floatLabel class="floatlabel-input-vacancy input">
+      <input pInputText id="vacancy" formControlName="vacancy" autocomplete="off"/>
+      <label for="username">Cargo</label>
   </p-floatLabel>
+    <p-floatLabel class="container-textarea">
+      <textarea
+      class="textarea"
+      pInputTextarea
+      id="float-input"
+      autoResize="true"
+      formControlName="description">
+    </textarea>
+    <label for="float-input">Descripción</label>
+    </p-floatLabel>
 
-  <p-floatLabel class="container-textarea">
-    <textarea
-    id="float-input"
-    class="textarea"
-    pInputTextarea
-    autoResize="true"
-    formControlName="requirements">
-  </textarea>
-  <label for="float-input">Requerimientos</label>
-  </p-floatLabel>
-<p-button type="submit" [disabled]="formInfoJob.invalid" label="Generar Entrevista" />
-</form>
+    <p-floatLabel class="container-textarea">
+      <textarea
+      id="float-input"
+      class="textarea"
+      pInputTextarea
+      autoResize="true"
+      formControlName="requirements">
+    </textarea>
+    <label for="float-input">Requerimientos</label>
+    </p-floatLabel>
+  <p-button type="submit" class="button-next" [disabled]="formInfoJob.invalid" label="Generar Entrevista" />
+  </form>
+</section>

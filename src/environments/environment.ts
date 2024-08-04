@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrlApi: 'http://localhost:3000/api/v1'
+  baseUrlApi: 'https://back-bot-job-talent-production.up.railway.app/api/v1'
 }

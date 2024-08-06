@@ -1,10 +1,12 @@
 <div class="header">
-  <div class="container-buttons">
-    <p-splitButton
-    icon="pi pi-wrench"
-    class="button-home"
-    [model]="items" />
-  </div>
+  @if (isLogged) {
+    <div class="container-buttons">
+      <p-splitButton
+      icon="pi pi-wrench"
+      class="button-home"
+      [model]="items" />
+    </div>
+  }
   <h1>Bot Job Talent</h1>
   <img src="../../../../assets/img/bot2.png" alt="">
 </div>

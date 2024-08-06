@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './core/auth.guard';
 
 export const routes: Routes = [
   {
@@ -8,7 +9,8 @@ export const routes: Routes = [
   },
   {
     path:'chat',
-    loadComponent:() => import('../app/features/chatbot/chatbot.component').then(c => c.ChatbotComponent)
+    loadComponent:() => import('../app/features/chatbot/chatbot.component').then(c => c.ChatbotComponent),
+    canActivate:[authGuard]
   },
   {
     path:'bienvenido',
@@ -24,6 +26,6 @@ export const routes: Routes = [
   },
   {
     path:'resultados',
-    loadComponent:() => import('../app/features/chatbot/components/result-interview/result-interview.component').then(c => c.ResultInterviewComponent)
+    loadComponent:() => import('../app/features/chatbot/components/result-interview/result-interview.component').then(c => c.ResultInterviewComponent),
   }
 ];

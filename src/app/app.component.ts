@@ -47,6 +47,7 @@ export class AppComponent implements OnInit {
       const userConfirmed = window.confirm('¿Esta acción lo sacará directamente de la aplicación, para navegar use solo los botones del app, aun asi, desea continuar?');
       if(userConfirmed === true) {
         this.router.navigate(['ingresar']);
+        sessionStorage.clear();
       }else {
         this.router.navigate([this.previousRoute]);
       }

@@ -44,9 +44,12 @@ export class LoginComponent implements OnInit{
   formLogin!:FormGroup;
   isModeRegister = signal<boolean>(false);
   isModeOtp = signal<boolean>(false);
+  isLogged:boolean = false;
   ngOnInit(): void {
     this.initForm();
   }
+
+
 
   initForm() {
     this.formLogin = this.formBuilder.group({
@@ -56,9 +59,6 @@ export class LoginComponent implements OnInit{
   }
 
   login() {
-    console.log(this.getValueForm('username'));
-    console.log(this.getValueForm('password'));
-
     if(this.formLogin.valid){
       this.authService.login(this.getValueForm('username'),this.getValueForm('password')).subscribe(data => {
         if(data.ok) {
@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit{
   redirectMenu() {
     setTimeout(() => {
       this.router.navigate(['chat'])
-    }, 1500);
+    }, 500);
   }
 
   showMessageRegister(event: {register:boolean}) {

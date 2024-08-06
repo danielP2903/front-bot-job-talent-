@@ -31,7 +31,7 @@
 }
 
 ::ng-deep .p-splitbutton > button {
-  background-color: #1F2937;
+  background-color: #1F2937 !important;
 
   &:focus {
     border-color: #1F2937;

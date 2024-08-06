@@ -15,8 +15,6 @@ export class SidebarComponent {
   @Output() hiddenSidebar = new EventEmitter<boolean>();
   @ViewChild('sidebarRef') sidebarRef!: Sidebar;
   closeCallback(e:any): void {
-    console.log(e);
-
     this.sidebarRef.close(e);
 }
 

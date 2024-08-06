@@ -56,8 +56,6 @@ export class ResultInterviewComponent implements OnInit {
   this.interview().forEach(value => {
       this.response = this.response + ' ' + value.question.trim() + ' ' + value.response.trim()
     });
-    console.log(this.response);
-
     this.titleLoader = 'Generando resultados..'
     this.getResultInterview();
   }

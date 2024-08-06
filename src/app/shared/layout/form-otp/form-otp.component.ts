@@ -44,7 +44,7 @@ export class FormOtpComponent implements OnInit {
       this.setDataUser();
       this.validateCode();
       this.value = '';
-      this.closeModal.emit();
+      this.close();
     }
   }
   ngOnInit(): void {
@@ -63,8 +63,6 @@ export class FormOtpComponent implements OnInit {
        this.setInterviewInMemory(data.data.questions,data.data.titleVacancy);
        this.redirectChatBot();
     },err => {
-      console.log(err);
-
       if(err.error?.statusCode === 400){
 
         this.messageService.add({ severity: 'error', summary: MessagesError.title, detail: err.error.messageException });
@@ -88,10 +86,7 @@ export class FormOtpComponent implements OnInit {
       email: this.form.controls['email'].value,
       names:this.form.controls['names'].value
     }
-    console.log(dataUser);
     this.commonService.setPersistentData('presenterInterview',dataUser);
-    console.log(this.commonService.getPersistentData('presenterInterview'));
-
   }
 
   redirectChatBot() {
@@ -99,4 +94,8 @@ export class FormOtpComponent implements OnInit {
     this.router.navigate(['chat']);
   }
 
+  close() {
+    this.step.set(1);
+    this.closeModal.emit();
+  }
 }

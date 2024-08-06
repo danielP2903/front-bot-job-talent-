@@ -105,7 +105,6 @@ export class ChatbotComponent implements OnInit {
   }
 
   captureInfoJob(info:string) {
-    console.log(info);
     this.infoJob = info;
     this.flow.set(Flows.generateInterview);
     this.roleChat = 'GenerateInterview';

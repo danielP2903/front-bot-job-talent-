@@ -19,6 +19,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.subscribeRoute();
+    if (window.performance.navigation.type == 1) {
+      this.router.navigate(['ingresar']);
+
+    }
   }
 
   subscribeRoute() {
@@ -27,16 +31,12 @@ export class AppComponent implements OnInit {
         this.previousRoute = this.currentRoute;
         this.currentRoute = data.url;
         if(data.navigationTrigger === 'popstate'){
-          console.log(this.currentRoute);
-
-
           this.checkActionPopstate();
         }
 
       }
     })
   }
-
 
   checkActionPopstate() {
 

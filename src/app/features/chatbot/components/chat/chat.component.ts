@@ -81,7 +81,6 @@ export class ChatComponent implements OnInit {
       }
       this.messages.push(_data);
       this.counterMessagesChat.update(val => val + 1);
-      console.log(this.counterMessagesChat());
       this.setLoaderWriteBot(false);
       this.scrollToBottom();
       this.disableChat = false;
@@ -98,7 +97,6 @@ export class ChatComponent implements OnInit {
 
   verifyInterviewFinished() {
     if(this.counterMessagesChat() >= 5){
-      console.log(this.interview());
       this.saveInterviewInMemory();
       this.router.navigate(['resultados']);
     }

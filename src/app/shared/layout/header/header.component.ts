@@ -48,8 +48,8 @@ export class HeaderComponent implements OnInit{
   verifyLogged() {
     if(sessionStorage.getItem(KEY_STORAGE.token)){
       const item = sessionStorage.getItem(KEY_STORAGE.token);
-      if(item === 'isPresenter'){
-        this.isLogged = false;
+      if(item?.length === 11){
+        this.items = this.items.filter(it => it.icon !== 'pi pi-home')
       }
       this.isLogged = true;
     }else {

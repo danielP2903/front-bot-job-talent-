@@ -30,4 +30,8 @@ export class CommonService {
     this.messageService.add({ severity: 'error', summary: 'Ha ocurrido un error', detail:error });
 
   }
+  removeData(id:string) {
+    delete this.persistenData[id];
+  }
+
 }

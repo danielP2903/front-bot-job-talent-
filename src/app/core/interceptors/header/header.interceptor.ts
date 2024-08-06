@@ -4,7 +4,7 @@ import { KEY_STORAGE } from '../../../shared/constants/key-storage';
 export const headerInterceptor: HttpInterceptorFn = (request, next) => {
   let headers = new HttpHeaders();
   const loginRequest = request.clone({ headers });
-  if (request.url.includes('/auth') || request.url.includes('/users')) {
+  if (request.url.includes('/auth') || request.url.includes('/users') || request.url.includes('/validateCode')) {
     return next(loginRequest);
   }
 

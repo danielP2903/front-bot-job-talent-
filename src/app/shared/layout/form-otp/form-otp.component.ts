@@ -11,6 +11,7 @@ import { MessagesError } from '../../constants/messages';
 import { ToastModule } from 'primeng/toast';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
+import { KEY_STORAGE } from '../../constants/key-storage';
 @Component({
   selector: 'app-form-otp',
   standalone: true,
@@ -62,7 +63,9 @@ export class FormOtpComponent implements OnInit {
        this.setInterviewInMemory(data.data.questions,data.data.titleVacancy);
        this.redirectChatBot();
     },err => {
-      if(err.error.statusCode === 400){
+      console.log(err);
+
+      if(err.error?.statusCode === 400){
 
         this.messageService.add({ severity: 'error', summary: MessagesError.title, detail: err.error.messageException });
       }else {
@@ -92,6 +95,7 @@ export class FormOtpComponent implements OnInit {
   }
 
   redirectChatBot() {
+    sessionStorage.setItem(KEY_STORAGE.token,'isPresenter');
     this.router.navigate(['chat']);
   }
 

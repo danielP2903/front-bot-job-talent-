@@ -74,7 +74,6 @@ export class ChatbotComponent implements OnInit {
 
   verifyInterviewQuestions() {
     if(this.commonService.getPersistentData('questions') &&this.commonService.getPersistentData('questions').questions.length > 0){
-      sessionStorage.setItem(KEY_STORAGE.token,JSON.stringify({isPresenter:true}));
       this.flow.set(Flows.chat);
     }
   }

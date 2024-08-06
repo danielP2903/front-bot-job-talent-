@@ -80,6 +80,7 @@ export class ResultInterviewComponent implements OnInit {
 
   redirectLogin() {
     sessionStorage.clear();
+    this.commonService.removeData('questions');
     this.router.navigate(['ingresar']);
   }
 

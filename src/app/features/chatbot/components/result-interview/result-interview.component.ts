@@ -79,6 +79,7 @@ export class ResultInterviewComponent implements OnInit {
   }
 
   redirectLogin() {
+    sessionStorage.clear();
     this.router.navigate(['ingresar']);
   }
 

@@ -20,6 +20,7 @@ import { ListInterviewsComponent } from './components/list-interviews/list-inter
 import { HeaderComponent } from '../../shared/layout/header/header.component';
 import { ReportsInterviewComponent } from './components/reports-interview/reports-interview.component';
 import { RouteService } from '../../core/services/route/route.service';
+import { KEY_STORAGE } from '../../shared/constants/key-storage';
 
 @Component({
   selector: 'app-chatbot',
@@ -73,6 +74,7 @@ export class ChatbotComponent implements OnInit {
 
   verifyInterviewQuestions() {
     if(this.commonService.getPersistentData('questions') &&this.commonService.getPersistentData('questions').questions.length > 0){
+      sessionStorage.setItem(KEY_STORAGE.token,JSON.stringify({isPresenter:true}));
       this.flow.set(Flows.chat);
     }
   }

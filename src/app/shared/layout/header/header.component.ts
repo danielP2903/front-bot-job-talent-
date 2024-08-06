@@ -47,6 +47,10 @@ export class HeaderComponent implements OnInit{
   }
   verifyLogged() {
     if(sessionStorage.getItem(KEY_STORAGE.token)){
+      const item = sessionStorage.getItem(KEY_STORAGE.token);
+      if(JSON.parse(item as string).isPresenter){
+        this.isLogged = false;
+      }
       this.isLogged = true;
     }else {
       this.isLogged =false;
